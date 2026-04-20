@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>waverush | profile</title>
+  <link rel="stylesheet" href="../CSS/start.css">
+</head>
+<body>
+
+<!--navigation-->
+<nav class="nav-bar">
+  <h1 class="logo">🌊 WaveRush</h1>
+  <ul class="nav-links">
+    <li><a href="home.html">home</a></li>
+    <li><a href="register.html">register</a></li>
+    <li><a href="game.html">play</a></li>
+    <li><a href="leaderboard.html">leaderboard</a></li>
+    <li><a href="profile.html" class="active">profile</a></li>
+    <li id="logoutLi" style="display:none;"><button id="logoutBtn">logout</button></li>
+  </ul>
+</nav>
+
+<!--profile section-->
+<section class="page-section">
+  <h2>player profile</h2>
+  <div id="profileContainer">
+    <p><strong>username:</strong> <span id="profileUsername"></span></p>
+    <p><strong>email:</strong> <span id="profileEmail"></span></p>
+    <p><strong>age:</strong> <span id="profileAge"></span></p>
+    <p><strong>gender:</strong> <span id="profileGender"></span></p>
+    <p><strong>top score:</strong> <span id="profileTopScore"></span></p>
+    <p><strong>games played:</strong> <span id="profileGames"></span></p>
+  </div>
+
+  <button id="editProfileBtn">edit profile</button>
+  <p id="message"></p>
+</section>
+
+<!--scripts-->
+<script src="../JS/profile.js" defer></script>
+<script src="../JS/logout.js" defer></script>
+</body>
+</html>

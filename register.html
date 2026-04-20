@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>waverush | register</title>
+  <link rel="stylesheet" href="../CSS/start.css">
+</head>
+<body>
+
+<!--navigation-->
+<nav class="nav-bar">
+  <h1 class="logo">🌊 WaveRush</h1>
+  <ul class="nav-links">
+    <li><a href="home.html">home</a></li>
+    <li><a href="register.html" class="active">register</a></li>
+    <li><a href="game.html">play</a></li>
+    <li><a href="leaderboard.html">leaderboard</a></li>
+    <li><a href="profile.html">profile</a></li>
+    <li id="logoutLi" style="display:none;"><button id="logoutBtn">logout</button></li>
+  </ul>
+</nav>
+
+<!--registration section-->
+<section class="page-section">
+  <form id="registerForm">
+    <h2>create account</h2>
+
+    <!--username field-->
+    <div class="input-row">
+      <label for="username">username:</label>
+      <input type="text" id="username" placeholder="enter username" required>
+    </div>
+
+    <!--email field-->
+    <div class="input-row">
+      <label for="email">email:</label>
+      <input type="email" id="email" placeholder="enter email" required>
+    </div>
+
+    <!--password field-->
+    <div class="input-row">
+      <label for="password">password:</label>
+      <input type="password" id="password" placeholder="enter password" required>
+    </div>
+
+    <!--confirm password field-->
+    <div class="input-row">
+      <label for="confirmPassword">confirm password:</label>
+      <input type="password" id="confirmPassword" placeholder="confirm password" required>
+    </div>
+
+    <!--new age field-->
+    <div class="input-row">
+      <label for="age">age:</label>
+      <input type="number" id="age" placeholder="enter age" min="10" max="99" required>
+    </div>
+
+    <!--new gender field-->
+    <div class="input-row">
+      <label for="gender">gender:</label>
+      <select id="gender" required>
+        <option value="" disabled selected>select gender</option>
+        <option value="Male">male</option>
+        <option value="Female">female</option>
+        <option value="Other">other</option>
+      </select>
+    </div>
+
+    <!--register button-->
+    <button type="button" id="registerBtn">register</button>
+    <p id="registerMessage"></p>
+  </form>
+</section>
+
+<!--scripts-->
+<script src="../JS/register.js" defer></script>
+<script src="../JS/logout.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>waverush | leaderboard</title>
+  <link rel="stylesheet" href="../CSS/start.css">
+</head>
+<body>
+
+<!--navigation-->
+<nav class="nav-bar">
+  <h1 class="logo">🌊 WaveRush</h1>
+  <ul class="nav-links">
+    <li><a href="home.html">home</a></li>
+    <li><a href="register.html">register</a></li>
+    <li><a href="game.html">play</a></li>
+    <li><a href="leaderboard.html" class="active">leaderboard</a></li>
+    <li><a href="profile.html">profile</a></li>
+    <li id="logoutLi" style="display:none;"><button id="logoutBtn">logout</button></li>
+  </ul>
+</nav>
+
+<!--leaderboard section-->
+<section class="page-section">
+  <h2>leaderboard</h2>
+  <table id="leaderboardTable">
+    <tr><th>rank</th><th>player</th><th>score</th></tr>
+  </table>
+</section>
+
+<!--scripts-->
+<script src="../JS/leaderboard.js" defer></script>
+<script src="../JS/logout.js" defer></script>
+<script>
+//restrict leaderboard access for guest users
+document.addEventListener("DOMContentLoaded", () => {
+  const currentUser = JSON.parse(sessionStorage.getItem("current_wave_user"));
+  if (!currentUser || currentUser.guest) {
+    alert("leaderboard is unavailable for guest players!");
+    window.location.href = "game.html";
+  }
+});
+</script>
+</body>
+</html>

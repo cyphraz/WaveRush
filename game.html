@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>waverush | game</title>
+  <link rel="stylesheet" href="../CSS/start.css">
+</head>
+<body>
+
+<!--navigation-->
+<nav class="nav-bar">
+  <h1 class="logo">🌊 WaveRush</h1>
+  <ul class="nav-links">
+    <li><a href="home.html">Home</a></li>
+    <li><a href="register.html">Register</a></li>
+    <li><a href="game.html" class="active">Play</a></li>
+    <li><a href="leaderboard.html">Leaderboard</a></li>
+    <li><a href="profile.html">Profile</a></li>
+    <li id="logoutLi" style="display:none;"><button id="logoutBtn">Logout</button></li>
+  </ul>
+</nav>
+
+<section class="page-section" id="game-container">
+  <div class="wave"></div>
+  <div class="wave wave2"></div>
+
+  <h2>Wave rush - Surf & Score! 🏄</h2>
+
+  <p>time left: <span id="time">30</span>s</p>
+  <p>score: <span id="score">0</span></p>
+  <p>🥇 top score: <span id="topScore">0</span></p>
+
+  <!--difficulty (the js will create this if it's missing)-->
+  <select id="difficulty">
+    <option value="easy">easy 🌊</option>
+    <option value="medium">medium 🌪️</option>
+    <option value="hard">hard 🌋</option>
+  </select>
+
+  <h3 id="word-display"></h3>
+  <input type="text" id="inputWord" placeholder="type the sentence here..." disabled>
+  <p id="message"></p>
+  <button id="startBtn">start game</button>
+</section>
+
+<script src="../JS/game.js" defer></script>
+<script src="../JS/logout.js" defer></script>
+<script>
+//hide leaderboard link for guest users
+document.addEventListener("DOMContentLoaded", () => {
+  const currentUser = JSON.parse(sessionStorage.getItem("current_wave_user"));
+  if (currentUser && currentUser.guest) {
+    const leaderboardLink = document.querySelector('a[href="leaderboard.html"]');
+    if (leaderboardLink) leaderboardLink.parentElement.style.display = "none";
+  }
+});
+</script>
+</body>
+</html>
